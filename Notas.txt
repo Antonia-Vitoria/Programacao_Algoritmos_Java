@@ -1,0 +1,3 @@
+System.out.print = Comando para imprimir na tela
+System.out.println = em JAVA se vc colocar no final esse "ln" ele quebra a linha e vai para baixo
+Resto da divisão vc usa cm nnumeros inteiros e porcentgem vc usa cm nhumeros decimais
