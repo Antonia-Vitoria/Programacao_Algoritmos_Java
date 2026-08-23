@@ -17,7 +17,8 @@ public class App {
         area = (largura * comprimento);
 
         System.out.printf("A largura é %.2f metros. O comprimento é %.2f metros. A área é %.2f\n", area);
-        Scanner close;
+        entra.close();
+        input.close();
 
     }
 }

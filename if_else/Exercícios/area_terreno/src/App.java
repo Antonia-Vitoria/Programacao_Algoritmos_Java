@@ -8,3 +8,4 @@ public class App {
         System.out.printf("O calculo total da área é %s", area);
     }
 }
+// A GENTE FEZ CM O PROFESSOR EM UMA PASTA SEPARADA NOME: entrada_usuario
