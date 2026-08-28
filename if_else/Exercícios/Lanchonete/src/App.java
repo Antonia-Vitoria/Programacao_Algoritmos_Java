@@ -1,4 +1,3 @@
-import java.text.Normalizer;
 import java.util.Scanner;
 
 public class App {
@@ -16,14 +15,12 @@ public class App {
         hamburguer = 18;
         total = 0;
 
-        Thread.sleep(10000);
+        Thread.sleep(4000);
         System.out.printf("Você gostaria de refrigerante? (SIM/NAO) ");
         String resp = input.next().toUpperCase().trim();
 
-        String respLimpo = Normalizer.normalize(resp, Normalizer.Form.NFD)
-                .replaceAll("[^\\p{ASCII}]~", "");
 
-        if (respLimpo.equals("SIM")) {
+        if (resp.equals("SIM")) {
 
             System.out.println("Digite quantos você quer: ");
             quantidade_refri = input.nextInt();
@@ -36,31 +33,31 @@ public class App {
             quantidade_hamburguer = input.nextInt();
             total += quantidade_hamburguer * hamburguer;
             System.out.println("Preparando pedido...");
-            Thread.sleep(8000);
+            Thread.sleep(1700);
 
             System.out.println("Processando...  ");
-            Thread.sleep(7000);
+            Thread.sleep(1600);
 
             System.out.println("Enviando...");
-            Thread.sleep(6000);
+            Thread.sleep(1500);
 
             System.out.printf("Tudo fica R$%.2f. Boa apetite e Volte sempre!", total);
 
-        } else if (respLimpo.equals("NAO")) {
+        } else if (resp.equals("NAO")) {
             System.out.println("Ok...Processando...");
-            Thread.sleep(2000);
+            Thread.sleep(1700);
 
             System.out.println("Digite quantos hambúgueres você quer: ");
             quantidade_hamburguer = input.nextInt();
             total += quantidade_hamburguer * hamburguer;
             System.out.println("Preparando pedido...");
-            Thread.sleep(8000);
+            Thread.sleep(1600);
 
             System.out.println("Processando...  ");
-            Thread.sleep(7000);
+            Thread.sleep(1500);
 
             System.out.println("Enviando...");
-            Thread.sleep(6000);
+            Thread.sleep(1400);
 
             System.out.printf("Tudo fica R$%.2f. Boa apetite e Volte sempre!", total);
         }
