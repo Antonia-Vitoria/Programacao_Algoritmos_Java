@@ -5,14 +5,14 @@ public class App {
         Scanner input = new Scanner(System.in);
 
         boolean cont = true;
-        while (cont) {
+        double deposito, saque, saldo = 1000.0;
+        int opcao;
 
-            double deposito, total, saque;
-            int saldo, opcao;
-            saldo = 1000;
+        while (cont) {
 
             System.out.println("""
                     Simulador de Atendimento Bancário
+                    DIGITE UM DESSES NÚMEROS:\n
                     1 - Para consultar saldo
                     2 - Para sacar dinheiro
                     3 - Para depositar dinheiro
@@ -23,73 +23,31 @@ public class App {
 
             switch (opcao) {
                 case 1: {
-                    System.out.printf("Seu saldo é de R$%d\n", saldo);
+                    System.out.printf("Seu saldo é de R$%.2f\n", saldo);
 
-                    System.out.println("Digite 'E' para encerrar ou 'R' para reiniciar: ");
-                    String resp = input.next();
-
-                    if (resp.equalsIgnoreCase("E")) {
-                        cont = false;
-                        System.out.println("Programa encerrado.");
-                    } else {
-                        
-                    }
-
-                }
-                    break;
-
+                } break;
+                    
                 case 2: {
-                    System.out.printf("Quanto você quer sacar?\nLEMBRANDO: Seu saldo é de R$%d\n", saldo);
+                    System.out.println("Quanto você quer sacar?\n");
                     saque = input.nextDouble();
-                    total = saldo - saque;
 
                     if (saque > saldo) {
-                        System.out.printf("Opção invalida! \nValor maior que o saldo\nVocê tem no seu saldo R$%d\n", saldo);
-                                
-                        System.out.println("Digite 'E' para encerrar ou 'R' para reiniciar: ");
-                        String resp = input.next();
+                        System.out.printf("Opção invalida! \nValor maior que o saldo\nVocê tem no seu saldo R$%.2f\n",
+                                saldo);
 
-                        if (resp.equalsIgnoreCase("E")) {
-                            cont = false;
-                            System.out.println("Programa encerrado.");
-                        } else {
-                            
-                        }
-
-                    } else if (saque <= saldo) {
-                        System.out.printf("Você sacou R$%.2f\nAgora seu saldo é de R$%.2f\n", saque, total);
-                        System.out.println("Digite 'E' para encerrar ou 'R' para reiniciar: ");
-                        String resp = input.next();
-
-                        if (resp.equalsIgnoreCase("E")) {
-                            cont = false;
-                            System.out.println("Programa encerrado.");
-                        } else {
-                            
-                        }
+                    } else {
+                        saldo -= saque;
+                        System.out.printf("Saque realizado com sucesso! Novo saldo: R$%.2f\n", saldo);
                     }
 
-                }
-                    break;
+                } break;
 
                 case 3: {
                     System.out.println("Digite quanto você quer depositar:");
                     deposito = input.nextDouble();
-                    total = saldo + deposito;
-                    System.out.printf("Seu saldo agora é de: R$%.2f\n", total);
-
-                    System.out.println("Digite 'E' para encerrar ou 'R' para reiniciar: ");
-                    String resp = input.next();
-
-                    if (resp .equalsIgnoreCase("E")) {
-                        cont = false;
-                        System.out.println("Programa encerrado.");
-
-                    } else {
-                        
-                    }
-                }
-                    break;
+                    saldo += deposito;
+                    System.out.printf("Seu saldo agora é de: R$%.2f\n", saldo);
+                } break;
 
                 case 4: {
                     System.out.println("Atendimento terminado!\n");
@@ -99,22 +57,20 @@ public class App {
 
                 default: {
                     System.out.println("Essa opção não existe");
-
-                    System.out.println("Digite 'E' para encerrar ou 'R' para reiniciar: ");
-                    String resp = input.next();
-
-                    if (resp.equalsIgnoreCase("E")) {
-                        cont = false;
-                        System.out.println("Programa encerrado.");
-                    } else {
-                    
-                    }
-
-                }
                     break;
-                
+                }
+
             }
-            
+            if (opcao != 4) {
+                System.out.println("\nDigite 'E' para encerrar ou 'R' para voltar ao menu principal: ");
+                String resp = input.next();
+
+                if (resp.equalsIgnoreCase("E")) {
+                    cont = false;
+                    System.out.println("Programa encerrado.");
+                }
+            }
+
         }
         input.close();
     }
