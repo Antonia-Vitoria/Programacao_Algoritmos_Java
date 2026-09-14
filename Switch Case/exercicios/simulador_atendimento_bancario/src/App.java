@@ -70,7 +70,6 @@ public class App {
                     System.out.println("Programa encerrado.");
                 }
             }
-
         }
         input.close();
     }
