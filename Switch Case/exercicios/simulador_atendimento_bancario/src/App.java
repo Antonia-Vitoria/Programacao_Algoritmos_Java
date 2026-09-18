@@ -28,7 +28,7 @@ public class App {
                 } break;
                     
                 case 2: {
-                    System.out.println("Quanto você quer sacar?\n");
+                    System.out.printf("Quanto você quer sacar?\nLembrando que seu saldo é R$%.2f\n", saldo);
                     saque = input.nextDouble();
 
                     if (saque > saldo) {
