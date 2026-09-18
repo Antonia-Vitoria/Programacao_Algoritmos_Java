@@ -25,8 +25,9 @@ public class App {
                 case 1: {
                     System.out.printf("Seu saldo é de R$%.2f\n", saldo);
 
-                } break;
-                    
+                }
+                    break;
+
                 case 2: {
                     System.out.printf("Quanto você quer sacar?\nLembrando que seu saldo é R$%.2f\n", saldo);
                     saque = input.nextDouble();
@@ -40,35 +41,34 @@ public class App {
                         System.out.printf("Saque realizado com sucesso! Novo saldo: R$%.2f\n", saldo);
                     }
 
-                } break;
+                }
+                    break;
 
                 case 3: {
                     System.out.println("Digite quanto você quer depositar:");
                     deposito = input.nextDouble();
                     saldo += deposito;
                     System.out.printf("Seu saldo agora é de: R$%.2f\n", saldo);
-                } break;
+                }
+                    break;
 
                 case 4: {
                     System.out.println("Atendimento terminado!\n");
-                    cont = false;
                     break;
                 }
 
                 default: {
-                    System.out.println("Essa opção não existe");
+                    System.out.println("Essa opção não existe\nEscolha de 1 a 4!\n");
                     break;
                 }
 
             }
-            if (opcao != 4) {
-                System.out.println("\nDigite 'E' para encerrar ou 'R' para voltar ao menu principal: ");
-                String resp = input.next();
+            System.out.println("\nDigite 'E' para encerrar ou 'R' para voltar ao menu principal: ");
+            String resp = input.next();
 
-                if (resp.equalsIgnoreCase("E")) {
-                    cont = false;
-                    System.out.println("Programa encerrado.");
-                }
+            if (resp.equalsIgnoreCase("E")) {
+            cont = false;
+            System.out.println("Programa encerrado.");
             }
         }
         input.close();

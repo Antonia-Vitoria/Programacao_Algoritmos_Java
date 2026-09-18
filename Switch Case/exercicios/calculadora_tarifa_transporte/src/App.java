@@ -56,17 +56,17 @@ public class App {
             System.out.println("\nDigite 'E' para encerrar ou 'R' para reiniciar: ");
             String resp = input.next();
 
-            // if (resp.equalsIgnoreCase("E")) {
-            //     cont = false;
-            //     System.out.println("Programa encerrado");
-            // }
-
-            if (resp == "E") {
+            if (resp.equalsIgnoreCase("E")) {
                 cont = false;
-                System.out.println("Programa encerrado!");
-            } else {
-                cont = true;
+                System.out.println("Programa encerrado");
             }
+
+            // if (resp == "E") {
+            //     cont = false;
+            //     System.out.println("Programa encerrado!");
+            // } else {
+            //     cont = true;
+            // }
         }
         input.close();
     }
