@@ -12,11 +12,11 @@ public class App {
 
             System.out.println("""
                     VAQUINHA PARA TV DE 55 OLED LG
-                    CUSTA R$6.634,05
+                    CUSTA R$6.634,05\n
                     
                      """);
-
-                    System.out.println("Digite quanto você quer depositar:");
+                
+                    System.out.println("Digite quanto você quer investir:");
                     deposito = input.nextDouble();
                     saldo += deposito;
                     System.out.printf("Sua caixinha agora é de: R$%.2f\n", saldo);
