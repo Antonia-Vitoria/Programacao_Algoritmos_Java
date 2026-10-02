@@ -4,52 +4,44 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
 
-        do{
+        double total = 0;
+        double meta = 150;
+        boolean resp = true;
 
-        System.out.println("""
-                BEM - VINDO A PRAÇA DE ALIMENTAÇÃO
-                ESCOLHA ONDE VOCÊ DESEJA COMER HOJE!
-                [1] Para Ifood
-                [2] Para Zé Delivery
-                [3] Para Rappi
-                """);
-        int opcao = input.nextInt();
-        float ifood, delivery, rappi;
-        ifood = 8;
-        delivery = 9;
-        rappi = 10;
-
-        switch (opcao) {
-            case 1: {
-                System.out.println("Está chovendo? TRUE/FALSE");
-                boolean resp = input.nextBoolean();
-
-                if (resp == true) {
-                    ifood += 5;
-                }
+        do {
+            System.out.printf("Está chovendo? (TRUE/FALSE)\n");
+            resp = input.nextBoolean();
+            if(resp == true){
+                total += 5;
             }
-                break;
-            case 2: {
-                System.out.println("Está chovendo? TRUE/FALSE");
-                boolean resp = input.nextBoolean();
+            System.out.println("Escolha uma opção:\n[1]Ifood\n[2]Zé Delivery\n[3]Rappi\n");
+            int opcao = input.nextInt();
 
-                if (resp == true) {
-                    delivery += 9;
-                }
-            }
-            case 3: {
-                System.out.println("Está chovendo? TRUE/FALSE");
-                boolean resp = input.nextBoolean();
+            switch (opcao) {
 
-                if (resp == true) {
-                    rappi += 10;
-                }
+                case 1:
+                    total += 8;
+                    
+                    break;
+
+                case 2:
+                    total += 9;
+                    break;
+
+                case 3:
+                    total += 10;
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
             }
-            default: System.out.println("Opção inválida!\nEscolha de 1 a 3.\n");
-                break;
-        }
-    
-        } while ();
+
+            System.out.println("Total acumulado: R$ " + total);
+
+        } while (total <= meta);
+
+        System.out.printf("Meta de R$150 atingida!\nValor total no final:R$",total);
+
         input.close();
     }
 }
