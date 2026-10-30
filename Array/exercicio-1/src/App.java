@@ -16,11 +16,11 @@ public class App {
 
         for (int i = 0; i < usuarios.length; i++) {
 
-            System.out.println("\nUsuário " + (i + 1));
-            System.out.println("Nome: " + usuarios[i]);
-            System.out.println("Quantidade de caracteres: " + usuarios[i].length());
-            System.out.println("Nome em maiúsculo: " + usuarios[i].toUpperCase());
-            System.out.println("Nome em minúsculo: " + usuarios[i].toLowerCase());
+            System.out.printf("\nUsuário ", (i + 1));
+            System.out.printf("Nome: ", usuarios[i]);
+            System.out.printf("Quantidade de caracteres: ", usuarios[i].length());
+            System.out.printf("Nome em maiúsculo: ", usuarios[i].toUpperCase());
+            System.out.printf("Nome em minúsculo: ", usuarios[i].toLowerCase());
         }
 
         input.close();
