@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -16,7 +15,8 @@ public class App {
                     2 - Visualizar todos os títulos já cadastrados.
                     3 - Alterar um filme ou sérieda sua lista.
                     4 - Excluir um título da lista.
-                    5 - Sair do programa.
+                    5 - Apagar a lista.
+                    6 - Sair do programa.
                 """);
         int opcao = input.nextInt();
 
@@ -39,7 +39,7 @@ public class App {
                         System.out.println("====== LISTA DE FILMES E SÉRIES PARA ASSISTIR ======");
 
                         for (int i = 0; i < listaFilmes.size(); i++) {
-                            System.out.printf("%d - %s\n", i + 1, listaFilmes.get(i));
+                            System.out.printf("%d° - %s\n", i + 1, listaFilmes.get(i));
                         }
                     }
                 }
@@ -52,11 +52,20 @@ public class App {
                         System.out.printf("%d - %s\n", i + 1, listaFilmes.get(i));
                     }
                     int alterarFilme = input.nextInt();
+                    input.nextLine();
 
-                    System.out.println("Digite o nome do novo título:\n");
-
+                    System.out.println("\nDigite o nome do novo título:\n");
                     String novoTitulo = input.nextLine();
-                    listaFilmes.set(alterarFilme -1, novoTitulo);
+
+                    listaFilmes.set(alterarFilme - 1, novoTitulo);
+
+                    System.out.println("\nNome alterado com sucesso!!\n");
+
+                    System.out.println("===== LISTA DE FILMES E SÉRIES PARA ASSISTIR =====\n");
+
+                    for (int i = 0; i < listaFilmes.size(); i++) {
+                        System.out.printf("%d - %s\n", i + 1, listaFilmes.get(i));
+                    }
                 }
                 default:
                     System.out.println("Erro!\nTente outra opção.");
