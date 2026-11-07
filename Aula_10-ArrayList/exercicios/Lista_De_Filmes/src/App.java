@@ -20,40 +20,49 @@ public class App {
                 """);
         int opcao = input.nextInt();
 
-        switch (opcao) {
-            case 1: {
-                System.out.println("Digite o nome do Filme/Série:");
-                String nomoItem = input.nextLine();
-                listaFilmes.add(nomoItem);
+        do {
+            switch (opcao) {
+                case 1: {
+                    System.out.println("Digite o nome do Filme/Série:");
+                    String novoItem = input.nextLine();
+                    listaFilmes.add(novoItem);
 
-                
+                }
+                case 2: {
+                    if (listaFilmes.isEmpty() == true) {
+                        System.out.println("""
+                                    ERROR
+                                    Sua lista está vazia
+                                    Adicione um item paara visualizar
+                                """);
+                    } else {
+                        System.out.println("====== LISTA DE FILMES E SÉRIES PARA ASSISTIR ======");
+
+                        for (int i = 0; i < listaFilmes.size(); i++) {
+                            System.out.printf("%d - %s\n", i + 1, listaFilmes.get(i));
+                        }
+                    }
+                }
+                case 3: {
+                    System.out.println("""
+                                Você escolheu alterar um item da lista
+                                Escolha o número que você quer alterar:
+                            """);
+                    for (int i = 0; i < listaFilmes.size(); i++) {
+                        System.out.printf("%d - %s\n", i + 1, listaFilmes.get(i));
+                    }
+                    int alterarFilme = input.nextInt();
+
+                    System.out.println("Digite o nome do novo título:\n");
+
+                    String novoTitulo = input.nextLine();
+                    listaFilmes.set(alterarFilme -1, novoTitulo);
+                }
+                default:
+                    System.out.println("Erro!\nTente outra opção.");
+                    break;
             }
-                break;
-
-            case 2: {
-
-            }
-                break;
-
-            case 3: {
-
-            }
-                break;
-
-            case 4: {
-
-            }
-                break;
-
-            case 5: {
-
-            }
-                break;
-
-            default:
-                System.out.println("Erro!\nTente outra opção.");
-                break;
-        }
+        } while (opcao != 5);
 
         input.close();
     }
